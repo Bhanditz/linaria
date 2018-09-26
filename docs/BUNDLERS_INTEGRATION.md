@@ -15,16 +15,11 @@ module: {
     {
       test: /\.js$/,
       use: [
+        { loader: 'babel-loader' },
         {
           loader: 'linaria/loader',
           options: {
             sourceMap: process.env.NODE_ENV !== 'production',
-          },
-        },
-        {
-          loader: 'babel-loader'
-          options: {
-            cacheDirectory: false,
           },
         }
       ],
